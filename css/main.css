@@ -10,7 +10,8 @@ body{
 }
 
 .white-background{
-    background: rgba(5, 5, 5, 0.7);
+  background-color: rgba(1, 0, 0, 0.6);
+  color: #fff;
   font-family: 'Bowlby One SC', cursive;
   text-align: center;
 }
