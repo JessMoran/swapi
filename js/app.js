@@ -35,15 +35,33 @@ function drawMovie(data) {
     characters.forEach(function(characterElem) {
       $pCharacterElement = $(`<p>${characterElem}</p>`);
       $charactersTitle.append($pCharacterElement);
-      $pCharacterElement.click(function(characterElem) {
-      console.log(characterElem);
-      });
+      $pCharacterElement.click({characterUrl: characterElem}, openModal);
     });
 
 		});
 
 }
 
-function openModal(characterElem) {
-  console.log(characterElem);
+function openModal(event) {
+  let characterUrl = event.data.characterUrl;
+
+  $.ajax({
+    url: characterUrl,
+  }).done(function(character) {
+
+    console.log(character);
+
+    $('.modal-title').text('Name: ' + character.name);
+
+    let characterBody = `<p>Hair color: ${character.hair_color}</p>`;
+    characterBody += `<p>Eye color: ${character.eye_color}</p>`;
+    characterBody += `<p>Mass: ${character.mass}</p>`;
+    characterBody += `<p>Height: ${character.height}</p>`;
+    characterBody += `<p>Skin color: ${character.skin_color}</p>`;
+
+    $('.modal-body').html(characterBody);
+
+    $('#myModal').modal();
+  });
+
 }
