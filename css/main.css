@@ -1,5 +1,6 @@
 body{
   background-image: url("../assets/images/background.png");
+
 }
 
 #logo{
@@ -10,6 +11,8 @@ body{
 
 .white-background{
   background: rgba(255, 255, 255, 0.6);
+  font-family: 'Bowlby One SC', cursive;
+  text-align: center;
 }
 
 .element {
