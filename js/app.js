@@ -33,7 +33,7 @@ function drawMovie(data) {
 
 
     characters.forEach(function(characterElem) {
-      $pCharacterElement = $(`<p>${characterElem}</p>`);
+      $pCharacterElement = $(`<p class = "characters" >${characterElem}</p>`);
       $charactersTitle.append($pCharacterElement);
       $pCharacterElement.click({characterUrl: characterElem}, openModal);
     });
